@@ -1,12 +1,12 @@
-from transformers import pipeline
+import torch
+from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
 
+tokenizer = DistilBertTokenizer.from_pretrained("./saved_models")
+model = DistilBertForSequenceClassification.from_pretrained("./saved_models")
 
-classifier = pipeline(
-    task="text-classification",
-    model="distilbert-base-uncased-finetuned-sst-2-english",
-    device=0
-)
+inputs = tokenizer("Hello, my dog is cute", return_tensors="pt")
+with torch.no_grad():
+    logits = model(**inputs).logits
 
-result = classifier("I love using Hugging Face Transformers!")
-print(result)
-# Output: [{'label': 'POSITIVE', 'score': 0.9998}]
+predicted_class_id = logits.argmax().item()
+model.config.id2label[predicted_class_id]
