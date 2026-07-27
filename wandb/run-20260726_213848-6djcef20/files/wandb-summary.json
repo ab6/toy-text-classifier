@@ -1,0 +1,1 @@
+{"_timestamp":1.785117478968576e+09,"_step":67984,"gradients/distilbert.embeddings.word_embeddings.weight":{"values":[2.3394816e+07],"bins":[0,0],"_type":"histogram"},"_wandb":{"runtime":1154},"_runtime":1154.523273167,"loss":NaN}

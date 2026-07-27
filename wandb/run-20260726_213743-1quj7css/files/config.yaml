@@ -1,0 +1,66 @@
+_wandb:
+    value:
+        cli_version: 0.28.1
+        e:
+            luc8iyp2c52uaqipit0t5klwliofzzpy:
+                apple:
+                    ecpuCores: 6
+                    gpuCores: 18
+                    macModel: Mac15,6
+                    memoryGb: 36
+                    name: Apple M3 Pro
+                    pcpuCores: 6
+                    ramTotalBytes: "38654705664"
+                    swapTotalBytes: "16106127360"
+                codePath: src/distilbert-wandb.py
+                codePathLocal: src/distilbert-wandb.py
+                cpu_count: 12
+                cpu_count_logical: 12
+                disk:
+                    /:
+                        total: "994662584320"
+                        used: "223784198144"
+                email: mckenzie.amber@gmail.com
+                executable: /Users/docam/VSCode/toy-text-classifier/toy-text-classifier/.venv/bin/python
+                git:
+                    commit: 616dff4d300a8655607e675ed339d1ae10cb0cdc
+                    remote: https://github.com/ab6/toy-text-classifier.git
+                host: Ambers-MBP.home.local
+                memory:
+                    total: "38654705664"
+                os: macOS-26.4.1-arm64-arm-64bit-Mach-O
+                program: /Users/docam/VSCode/toy-text-classifier/toy-text-classifier/src/distilbert-wandb.py
+                python: CPython 3.14.4
+                root: /Users/docam/VSCode/toy-text-classifier/toy-text-classifier
+                startedAt: "2026-07-27T01:37:43.876020Z"
+                writerId: luc8iyp2c52uaqipit0t5klwliofzzpy
+        m: []
+        python_version: 3.14.4
+        t:
+            "1":
+                - 1
+                - 11
+                - 49
+                - 51
+                - 71
+            "2":
+                - 1
+                - 11
+                - 49
+                - 51
+                - 71
+            "3":
+                - 1
+                - 2
+                - 16
+            "4": 3.14.4
+            "5": 0.28.1
+            "6": 5.14.1
+            "12": 0.28.1
+            "13": darwin-arm64
+batch_size:
+    value: 128
+epochs:
+    value: 100
+learning_rate:
+    value: 0.001

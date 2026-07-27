@@ -1,0 +1,17 @@
+{
+  "os":  "macOS-26.4.1-arm64-arm-64bit-Mach-O",
+  "python":  "CPython 3.14.4",
+  "startedAt":  "2026-07-27T01:16:43.910013Z",
+  "program":  "/Users/docam/VSCode/toy-text-classifier/toy-text-classifier/src/distilbert-wandb.py",
+  "codePath":  "src/distilbert-wandb.py",
+  "codePathLocal":  "src/distilbert-wandb.py",
+  "git":  {
+    "remote":  "https://github.com/ab6/toy-text-classifier.git",
+    "commit":  "616dff4d300a8655607e675ed339d1ae10cb0cdc"
+  },
+  "email":  "mckenzie.amber@gmail.com",
+  "root":  "/Users/docam/VSCode/toy-text-classifier/toy-text-classifier",
+  "host":  "Ambers-MBP.home.local",
+  "executable":  "/Users/docam/VSCode/toy-text-classifier/toy-text-classifier/.venv/bin/python",
+  "writerId":  "gvc41exocwofe2hier87aetyve3czn8t"
+}

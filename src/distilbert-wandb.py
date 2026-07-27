@@ -23,7 +23,7 @@ model = DistilBertForSequenceClassification.from_pretrained("./saved_models/dist
 #     device_map="auto",
 #     attn_implementation="sdpa"
 # )
-optimizer = torch.optim.SGD(model.parameters(), lr=0.5)
+optimizer = torch.optim.SGD(model.parameters(), lr=0.001)
 
 ds = load_dataset("cornell-movie-review-data/rotten_tomatoes")
 
@@ -76,13 +76,18 @@ train_loader = DataLoader(
 # for idx, feature in enumerate(train_loader):
 #     print(f"Batch {idx+1}:", feature)
 
-num_epochs = 3
+        
+# start a new experiment
+with wandb.init(project="new-dbert-model", config=config) as run:
 
-for epoch in range(num_epochs):
-    model.to(device)
-    model.train()
+    # set up model and data
+    model, dataloader = model, train_loader
 
-    for batch in train_loader:
+    # optional: track gradients
+    run.watch(model)
+    batch_ct = 0
+    example_ct = 0
+    for batch in dataloader:
         optimizer.zero_grad()
     
         input_ids = batch['input_ids'].to(device)
@@ -96,5 +101,11 @@ for epoch in range(num_epochs):
         loss.backward()
         optimizer.step()
 
-        print(f"Epoch: {epoch+1:03d}/{num_epochs:03d}"
-              f" | Train/Val Loss: {loss:.2f}")
+        example_ct +=  16
+        batch_ct += 1
+
+        # Report metrics every 25th batch
+        if ((batch_ct + 1) % 25) == 0:
+            run.log({"loss": loss}, step=example_ct)
+            print(f"Loss after {str(example_ct).zfill(5)} examples: {loss:.3f}")
+

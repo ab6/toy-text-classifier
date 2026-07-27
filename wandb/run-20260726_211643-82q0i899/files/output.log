@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/Users/docam/VSCode/toy-text-classifier/toy-text-classifier/src/distilbert-wandb.py", line 90, in <module>
+    metrics = model.training_step()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/docam/VSCode/toy-text-classifier/toy-text-classifier/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1967, in __getattr__
+    raise AttributeError(
+        f"'{type(self).__name__}' object has no attribute '{name}'"
+    )
+AttributeError: 'DistilBertForSequenceClassification' object has no attribute 'training_step'

@@ -11,3 +11,4 @@ wheels/
 
 # models and data
 saved_models/
+data/
